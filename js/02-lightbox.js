@@ -19,10 +19,8 @@ function createGalleryMarkup(arr) {
     .join('');
 }
 galleryRef.insertAdjacentHTML('beforeend', createGalleryMarkup(galleryItems));
-пше;
 
 var lightbox = new SimpleLightbox('.gallery a', {
-  captionData: 'alt',
+  captionsData: 'alt',
   captionDelay: 250,
-  captionClass: 'qwer',
 });
