@@ -38,6 +38,11 @@ function onGalleryImageClick(event) {
 `);
 
   instance.show();
-}
 
-function clickDelegateAction(event) {}
+  if (instance.visible()) {
+    document.addEventListener('keydown', event => {
+      if (event.code !== 'Escape') return;
+      instance.close();
+    });
+  }
+}
