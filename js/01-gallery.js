@@ -6,7 +6,6 @@ const ref = {
 };
 
 ref.gallery.insertAdjacentHTML('beforeend', createGalleryMarkup(galleryItems));
-
 ref.gallery.addEventListener('click', onGalleryImageClick);
 
 function createGalleryMarkup(arr) {
