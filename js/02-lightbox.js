@@ -19,7 +19,19 @@ function createGalleryMarkup(arr) {
     .join('');
 }
 galleryRef.insertAdjacentHTML('beforeend', createGalleryMarkup(galleryItems));
+galleryRef.addEventListener('click', onGalleryImageClick);
 
-var lightbox = new SimpleLightbox('.gallery a', {
-  /* options */
-});
+function onGalleryImageClick(event) {
+  const evt = event.target;
+  event.preventDefault();
+  const galleryImage = evt.classList.contains('gallery__image');
+
+  if (!galleryImage) return;
+
+  var lightbox = new SimpleLightbox('.gallery a', {
+    captionSelector: evt.getAttribute('alt'),
+    captionType: 'attr',
+    captionDelay: 300,
+    animationSpeed: 300,
+  });
+}
